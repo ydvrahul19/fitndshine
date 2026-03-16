@@ -1,0 +1,340 @@
+/* ============================================================
+   base.css — CSS Variables, Reset, Typography & Utilities
+   Fit & Shine Wellness Centre
+   ============================================================ */
+
+/* ── DESIGN TOKENS ── */
+:root {
+  /* Brand Colors */
+  --g:    #003d2e;    /* Deep forest green — primary */
+  --gm:   #0a5c40;   /* Mid green — hover states */
+  --gl:   #d6f0e0;   /* Light green — backgrounds */
+  --y:    #a8e600;   /* Lime yellow — accent / CTA text */
+  --yd:   #7ab800;   /* Dark yellow — strokes */
+  --yl:   #edffc2;   /* Pale yellow — light backgrounds */
+
+  /* Page Backgrounds */
+  --bg:   #f5fcf0;   /* Site background */
+  --card: #ffffff;   /* Card background */
+
+  /* Text Colors */
+  --t1:   #002b1e;   /* Primary text */
+  --t2:   #1f5c3a;   /* Secondary text */
+  --t3:   #5a9070;   /* Muted text / labels */
+
+  /* Typography */
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans:  'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* Shadows */
+  --shadow:    0 4px 14px rgba(0,61,46,.3);
+  --shadow-lg: 0 12px 40px rgba(0,61,46,.18);
+  --shadow-md: 0 6px 22px rgba(0,61,46,.22);
+
+  /* Border Radius */
+  --r-sm:  8px;
+  --r-md:  14px;
+  --r-lg:  20px;
+  --r-xl:  28px;
+
+  /* Spacing */
+  --sp-xs:  8px;
+  --sp-sm:  16px;
+  --sp-md:  24px;
+  --sp-lg:  40px;
+  --sp-xl:  60px;
+  --sp-2xl: 80px;
+}
+
+/* ── RESET ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--t1);
+  overflow-x: hidden;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  font-family: var(--sans);
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--g); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--gm); }
+
+/* ── TYPOGRAPHY ── */
+h1, h2, h3, h4, h5 {
+  line-height: 1.15;
+  color: var(--t1);
+}
+
+p { line-height: 1.7; }
+
+/* ── PAGE ROUTING ── */
+.pg { display: none; }
+.pg.on {
+  display: block;
+  animation: fadeUp .35s ease;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── PULSE ANIMATION ── */
+.pulse {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  background: var(--y);
+  border-radius: 50%;
+  animation: blink 2s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: .3; }
+}
+
+/* ── UTILITY CLASSES ── */
+.max-w {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.sec {
+  padding: var(--sp-xl) 24px;
+}
+
+.text-center { text-align: center; }
+
+.mt-4  { margin-top: 4px; }
+.mt-6  { margin-top: 6px; }
+.mt-24 { margin-top: 24px; }
+.mt-32 { margin-top: 32px; }
+.mt-40 { margin-top: 40px; }
+.mt-52 { margin-top: 52px; }
+
+/* ── SECTION HEADER ── */
+.section-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.sec-eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--t3);
+  margin-bottom: 8px;
+}
+
+.sec-title {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  color: var(--t1);
+  margin-bottom: 10px;
+  line-height: 1.15;
+}
+
+.sec-desc {
+  font-size: 15px;
+  color: var(--t2);
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.75;
+}
+
+/* ── PAGE HERO BANNER ── */
+.pg-hero {
+  padding: 56px 24px 44px;
+  text-align: center;
+  background: linear-gradient(135deg, var(--bg), var(--yl));
+  border-bottom: 2px solid var(--y);
+}
+
+.pg-hero h1 {
+  font-family: var(--serif);
+  font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+  color: var(--t1);
+  margin-bottom: 10px;
+}
+
+.pg-hero p {
+  color: var(--t2);
+  font-size: 16px;
+}
+
+.ph-eyebrow {
+  display: inline-block;
+  background: rgba(0,61,46,.08);
+  color: var(--t2);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 5px 16px;
+  border-radius: 20px;
+  margin-bottom: 14px;
+  border: 1px solid rgba(0,93,62,.14);
+}
+
+/* ── SHARED BUTTONS ── */
+.btn-g {
+  background: var(--g);
+  color: var(--y);
+  padding: 13px 26px;
+  border-radius: var(--r-sm);
+  font-weight: 700;
+  font-size: 15px;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: .2s;
+  box-shadow: var(--shadow);
+}
+
+.btn-g:hover {
+  background: var(--gm);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-cta-g {
+  background: var(--g);
+  color: var(--y);
+  padding: 14px 30px;
+  border-radius: var(--r-sm);
+  font-weight: 800;
+  font-size: 15px;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: .2s;
+  box-shadow: var(--shadow);
+  letter-spacing: .2px;
+}
+
+.btn-cta-g:hover {
+  background: var(--gm);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(0,61,46,.4);
+}
+
+.btn-cta-o {
+  background: transparent;
+  color: var(--g);
+  border: 2.5px solid var(--g);
+  padding: 12px 28px;
+  border-radius: var(--r-sm);
+  font-weight: 700;
+  font-size: 15px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: .2s;
+}
+
+.btn-cta-o:hover {
+  background: var(--g);
+  color: var(--y);
+}
+
+/* ── CTA BAND ── */
+.cta-band {
+  background: var(--yl);
+  border-top: 2px solid var(--y);
+  border-bottom: 2px solid var(--y);
+  padding: 72px 24px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-band::before {
+  content: '';
+  position: absolute;
+  top: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: rgba(168,230,0,.2);
+  pointer-events: none;
+}
+
+.cta-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+.cta-eyebrow {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--t3);
+  margin-bottom: 10px;
+}
+
+.cta-band h2 {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 4vw, 2.9rem);
+  color: var(--t1);
+  margin-bottom: 14px;
+  line-height: 1.15;
+}
+
+.cta-band p {
+  font-size: 16px;
+  color: var(--t2);
+  margin-bottom: 32px;
+  line-height: 1.7;
+}
+
+.cta-btns {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}

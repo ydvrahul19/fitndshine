@@ -1,0 +1,198 @@
+/* ============================================================
+   responsive.css — Media Queries & Responsive Layouts
+   Fit & Shine Wellness Centre
+   ============================================================ */
+
+/* ── TABLET: max 1024px ── */
+@media (max-width: 1024px) {
+  /* About Section */
+  .about-inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .about-badge { left: 0; }
+
+  /* Why Strip */
+  .why-grid { grid-template-columns: 1fr 1fr; }
+
+  /* Services Grids */
+  .svc-grid { grid-template-columns: 1fr 1fr; }
+  .svc-card:nth-child(3n) { border-right: 1px solid #ccebd8; }
+  .svc-card:nth-child(2n) { border-right: none; }
+  .svc-card:nth-child(n+4) { border-bottom: 1px solid #ccebd8; }
+  .svc-card:nth-child(n+5) { border-bottom: none; }
+
+  .svc-detail-grid { grid-template-columns: 1fr 1fr; }
+  .sdcard:nth-child(3n) { border-right: 1px solid #ccebd8; }
+  .sdcard:nth-child(2n) { border-right: none; }
+  .sdcard:nth-child(n+4) { border-bottom: 1px solid #ccebd8; }
+  .sdcard:nth-child(n+5) { border-bottom: none; }
+
+  /* Process Steps */
+  .process-steps { grid-template-columns: repeat(3, 1fr); }
+
+  /* Footer */
+  .footer-inner { grid-template-columns: 1fr 1fr; }
+
+  /* Treatment Strip */
+  .ts-inner { grid-template-columns: repeat(3, 1fr); }
+  .ts-item:nth-child(3) { border-right: none; }
+  .ts-item:nth-child(n+4) { border-top: 1px solid #e4f4ec; }
+
+  /* Stats */
+  .stats-inner { grid-template-columns: repeat(3, 1fr); }
+  .stat-item:nth-child(3) { border-right: none; }
+
+  /* Book Layout */
+  .book-layout { grid-template-columns: 1fr; }
+  .book-right { border-left: none; border-top: 1.5px solid #ccebd8; }
+
+  /* About Page */
+  .about-page-grid { grid-template-columns: 1fr; }
+
+  /* Testimonials Page */
+  .testi-page-grid { grid-template-columns: 1fr 1fr; }
+
+  /* Benefits */
+  .benefits-grid { grid-template-columns: 1fr; }
+
+  /* Articles */
+  .articles-grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* ── MOBILE: max 768px ── */
+@media (max-width: 768px) {
+  /* Topbar */
+  .topbar { display: none; }
+
+  /* Navigation */
+  .nav-links { display: none; }
+  .ham { display: block; }
+
+  /* Hero */
+  .hero-slider { height: 520px; }
+  .hs-content { left: 5%; max-width: 90%; }
+  .hs-content h1 { font-size: 2.2rem; }
+  .hs-btns { flex-direction: column; }
+  .hs-btns .btn-h1,
+  .hs-btns .btn-h2 { width: 100%; justify-content: center; }
+
+  /* Hero stat bar */
+  .hsb-inner { grid-template-columns: 1fr 1fr; }
+  .hsb-item:nth-child(2) { border-right: none; }
+  .hsb-item:nth-child(n+3) { border-top: 1px solid rgba(168,230,0,.1); }
+
+  /* Stats */
+  .stats-inner { grid-template-columns: 1fr 1fr; }
+  .stat-item:nth-child(2) { border-right: none; }
+  .stat-item:nth-child(n+3) { border-top: 1px solid rgba(168,230,0,.12); }
+
+  /* Treatment strip */
+  .ts-inner { grid-template-columns: repeat(2, 1fr); }
+  .ts-item:nth-child(2n) { border-right: none; }
+  .ts-item:nth-child(n+3) { border-top: 1px solid #e4f4ec; }
+
+  /* Services */
+  .svc-grid { grid-template-columns: 1fr; }
+  .svc-card { border-right: none !important; border-bottom: 1px solid #ccebd8 !important; }
+  .svc-card:last-child { border-bottom: none !important; }
+
+  .svc-detail-grid { grid-template-columns: 1fr; }
+  .sdcard { border-right: none !important; border-bottom: 1px solid #ccebd8 !important; }
+  .sdcard:last-child { border-bottom: none !important; }
+
+  /* Why Grid */
+  .why-grid { grid-template-columns: 1fr; }
+  .why-card { border-right: none; }
+
+  /* Process Steps */
+  .process-steps { grid-template-columns: 1fr 1fr; }
+
+  /* Testimonials */
+  .testi-card { min-width: 100%; }
+  .testi-page-grid { grid-template-columns: 1fr; }
+  .testi-stats-bar { grid-template-columns: 1fr 1fr; }
+  .testi-stat:nth-child(2n) { border-right: none; }
+  .testi-stat { padding: 12px 8px; }
+
+  /* Articles */
+  .articles-grid { grid-template-columns: 1fr; }
+
+  /* CTA */
+  .cta-btns { flex-direction: column; align-items: center; }
+  .cta-btns .btn-cta-g,
+  .cta-btns .btn-cta-o { width: 100%; justify-content: center; }
+
+  /* About Section */
+  .about-section { padding: 52px 24px; }
+  .about-inner { grid-template-columns: 1fr; gap: 28px; }
+
+  /* About Page */
+  .about-page-grid { grid-template-columns: 1fr; }
+  .founder-grid { grid-template-columns: 1fr; }
+
+  /* Contact */
+  .contact-grid { grid-template-columns: 1fr; }
+
+  /* Footer */
+  .footer-inner { grid-template-columns: 1fr; }
+
+  /* Book */
+  .book-left { padding: 36px 24px; }
+  .book-right { padding: 32px 24px; }
+  .fg-row { grid-template-columns: 1fr; }
+
+  /* Benefits */
+  .benefits-grid { grid-template-columns: 1fr; }
+
+  /* Page sections */
+  .svc-section,
+  .testi-section,
+  .why-strip,
+  .articles-section,
+  .cta-band,
+  .about-section { padding: 52px 24px; }
+}
+
+/* ── SMALL MOBILE: max 480px ── */
+@media (max-width: 480px) {
+  /* Hero */
+  .hero-slider { height: 480px; }
+  .hs-content { max-width: 95%; }
+  .hs-content h1 { font-size: 2rem; }
+  .hs-eyebrow { font-size: 10px; }
+
+  /* Stats single column */
+  .stats-inner { grid-template-columns: 1fr 1fr; }
+
+  /* Stat bar single col */
+  .hsb-inner { grid-template-columns: 1fr 1fr; }
+
+  /* Typography adjustments */
+  .sec-title { font-size: 1.8rem; }
+  .about-title { font-size: 1.8rem; }
+
+  /* Process steps */
+  .process-steps { grid-template-columns: 1fr; }
+
+  /* Testi stats */
+  .testi-stats-bar { grid-template-columns: 1fr 1fr; }
+
+  /* Hero arrows hide on very small */
+  .hs-arrow { display: none; }
+}
+
+/* ── PRINT ── */
+@media print {
+  .topbar,
+  .nav-outer,
+  .wa-float,
+  .hero-stat-bar,
+  .hs-arrow,
+  .hs-dots { display: none !important; }
+
+  .pg { display: none !important; }
+  #p-home { display: block !important; }
+  body { background: #fff; color: #000; }
+}

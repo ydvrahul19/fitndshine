@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Fit & Shine Wellness Centre – Ahmedabad's most trusted destination for weight loss, body slimming, inch loss therapy, detox programs, and personalized nutrition. Book your free consultation today.">
+<meta name="keywords" content="weight loss Ahmedabad, body slimming, inch loss therapy, wellness centre Ahmedabad, nutrition consultation, detox, post pregnancy weight loss">
+<meta property="og:title" content="Fit & Shine Wellness Centre – Ahmedabad">
+<meta property="og:description" content="Transform your body, transform your life. Expert-guided wellness programs by Kartik & Shilpa.">
+<meta property="og:type" content="website">
+<title>Fit & Shine Wellness Centre | Best Weight Loss Centre in Ahmedabad</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/pages.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<!-- TOP INFO BAR -->
+<div class="topbar">
+  <div class="topbar-left">
+    <div class="tb-item">📞 <a href="tel:+919824455234">+91 98244 55234</a></div>
+    <div class="tb-item">📍 Gate No 1, Ganesh Glory, Gota, Ahmedabad</div>
+    <div class="tb-item">🕐 Mon–Sat: 7:00 AM – 8:00 PM</div>
+  </div>
+  <div class="topbar-right">
+    <a class="tb-link" href="#" onclick="go('about');return false">About Us</a>
+    <a class="tb-book" href="#" onclick="go('book');return false">✦ Book Free Consult</a>
+  </div>
+</div>
+
+<!-- NAVIGATION -->
+<div class="nav-outer">
+  <div class="nav">
+    <a class="logo" href="#" onclick="go('home');return false">
+      <div class="logo-icon">🌿</div>
+      <div>
+        <span class="logo-name">Fit &amp; Shine</span>
+        <span class="logo-tag">Wellness Centre · Ahmedabad</span>
+      </div>
+    </a>
+    <div class="nav-links">
+      <button class="nl act" onclick="go('home',this)">Home</button>
+      <button class="nl" onclick="go('services',this)">Services</button>
+      <button class="nl" onclick="go('about',this)">About Us</button>
+      <button class="nl" onclick="go('testimonials',this)">Testimonials</button>
+      <button class="nl" onclick="go('contact',this)">Contact</button>
+      <button class="nav-cta" onclick="go('book',null)">✦ Book Free Consult</button>
+    </div>
+    <button class="ham" id="ham" onclick="toggleMob()">☰</button>
+  </div>
+  <div class="mob-nav" id="mob-nav">
+    <button class="ml" onclick="go('home');closeMob()">Home</button>
+    <button class="ml" onclick="go('services');closeMob()">Services</button>
+    <button class="ml" onclick="go('about');closeMob()">About Us</button>
+    <button class="ml" onclick="go('testimonials');closeMob()">Testimonials</button>
+    <button class="ml" onclick="go('contact');closeMob()">Contact</button>
+    <button class="ml ml-book" onclick="go('book');closeMob()">📅 Book Free Consultation</button>
+  </div>
+</div>
+
+<!-- ═══ PAGE: HOME ═══ -->
+<div id="p-home" class="pg on">
+
+  <div class="hero-slider">
+    <div class="hs-slides" id="hs-slides"></div>
+    <div class="hs-overlay"></div>
+    <div class="hs-content">
+      <div class="hs-eyebrow"><span class="pulse"></span> Ahmedabad's Most Trusted Wellness Centre</div>
+      <h1 id="hs-title">Transform Your Body,<br><em>Transform Your Life</em></h1>
+      <p class="hs-sub" id="hs-sub">Expert-guided weight loss, advanced slimming treatments, and holistic wellness — personalised just for you by Kartik &amp; Shilpa.</p>
+      <div class="hs-btns">
+        <button class="btn-h1" onclick="go('book')">📅 Book Free Consultation</button>
+        <button class="btn-h2" onclick="go('services')">▶ Explore Programs</button>
+      </div>
+    </div>
+    <button class="hs-arrow hs-prev" onclick="hSlide(-1)" aria-label="Previous">&#8592;</button>
+    <button class="hs-arrow hs-next" onclick="hSlide(1)" aria-label="Next">&#8594;</button>
+    <div class="hs-dots" id="hs-dots"></div>
+    <div class="hero-stat-bar">
+      <div class="hsb-inner">
+        <div class="hsb-item"><span class="hsb-num" id="hn1">0+</span><span class="hsb-label">Happy Clients</span></div>
+        <div class="hsb-item"><span class="hsb-num" id="hn2">0+</span><span class="hsb-label">Years Experience</span></div>
+        <div class="hsb-item"><span class="hsb-num" id="hn3">0+</span><span class="hsb-label">Kgs Lost Together</span></div>
+        <div class="hsb-item"><span class="hsb-num" id="hn4">0%</span><span class="hsb-label">Success Rate</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="treatment-strip">
+    <div class="ts-inner">
+      <div class="ts-item act" onclick="selT(this)"><span class="ts-icon">⚖️</span><span class="ts-label">Weight Loss</span></div>
+      <div class="ts-item" onclick="selT(this)"><span class="ts-icon">⚡</span><span class="ts-label">Body Slimming</span></div>
+      <div class="ts-item" onclick="selT(this)"><span class="ts-icon">🥗</span><span class="ts-label">Nutrition</span></div>
+      <div class="ts-item" onclick="selT(this)"><span class="ts-icon">🎯</span><span class="ts-label">Inch Loss</span></div>
+      <div class="ts-item" onclick="selT(this)"><span class="ts-icon">✨</span><span class="ts-label">Detox</span></div>
+      <div class="ts-item" onclick="selT(this)"><span class="ts-icon">❤️</span><span class="ts-label">Post-Pregnancy</span></div>
+    </div>
+  </div>
+
+  <div class="about-section">
+    <div class="about-inner">
+      <div>
+        <div class="about-eyebrow">About Fit &amp; Shine</div>
+        <h2 class="about-title">Why get treated<br>at Fit &amp; Shine?</h2>
+        <p class="about-desc">At Fit &amp; Shine, every individual receives a personalised, expert-designed program addressing the root cause of weight gain — not just symptoms. We combine advanced wellness technology with certified nutrition science and compassionate coaching.</p>
+        <p class="about-desc">Founders Kartik &amp; Shilpa bring 15+ years of combined expertise and a genuine passion for helping every client rediscover their confidence, energy, and best self.</p>
+        <div class="skill-bars">
+          <div class="sb-row"><div class="sb-header"><span>Weight Loss Programs</span><span>92%</span></div><div class="sb-track"><div class="sb-fill" data-w="92"></div></div></div>
+          <div class="sb-row"><div class="sb-header"><span>Body Slimming &amp; Inch Loss</span><span>88%</span></div><div class="sb-track"><div class="sb-fill" data-w="88"></div></div></div>
+          <div class="sb-row"><div class="sb-header"><span>Nutrition &amp; Detox</span><span>95%</span></div><div class="sb-track"><div class="sb-fill" data-w="95"></div></div></div>
+          <div class="sb-row"><div class="sb-header"><span>Post-Pregnancy Wellness</span><span>90%</span></div><div class="sb-track"><div class="sb-fill" data-w="90"></div></div></div>
+        </div>
+        <button class="btn-g mt-24" onclick="go('about')">Read More About Us →</button>
+      </div>
+      <div class="about-img-wrap">
+        <img src="https://images.unsplash.com/photo-1609899464726-209cbc1b82d0?w=800&h=600&fit=crop&q=85" alt="Wellness consultation Ahmedabad" class="about-img">
+        <div class="about-badge"><div class="ab-num">15+</div><div class="ab-text">Years of<br>Excellence</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="stats-section">
+    <div class="stats-inner">
+      <div class="stat-item"><span class="stat-num" id="s1">0</span><span class="stat-label">Clients Transformed</span></div>
+      <div class="stat-item"><span class="stat-num" id="s2">0</span><span class="stat-label">Kgs Lost Together</span></div>
+      <div class="stat-item"><span class="stat-num" id="s3">0</span><span class="stat-label">Years of Expertise</span></div>
+      <div class="stat-item"><span class="stat-num" id="s4">0</span><span class="stat-label">Wellness Programs</span></div>
+      <div class="stat-item"><span class="stat-num" id="s5">0</span><span class="stat-label">Satisfaction Rate</span></div>
+    </div>
+  </div>
+
+  <div class="svc-section">
+    <div class="svc-inner">
+      <div class="section-header">
+        <div class="sec-eyebrow">Our Programs</div>
+        <h2 class="sec-title">Our Wellness Specialisations</h2>
+        <p class="sec-desc">Six expert-designed programs — each built around your body, your goals, and your life</p>
+      </div>
+      <div class="svc-grid">
+        <div class="svc-card"><img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=600&h=220&fit=crop&q=80" alt="Weight Loss" class="svc-img"><div class="svc-body"><div class="svc-icon-row"><div class="svc-dot">⚖️</div><span class="svc-tag">Weight Management</span></div><h3>Personalized Weight Loss</h3><p>Medically-guided plans combining targeted nutrition, movement, and advanced treatments to help you lose weight safely and permanently.</p><div class="svc-foot"><span class="svc-result">✓ Results in 4–8 weeks</span><button class="svc-btn" onclick="go('book')">Book Now</button></div></div></div>
+        <div class="svc-card"><img src="https://images.unsplash.com/photo-1607962837359-5e7e89f86776?w=600&h=220&fit=crop&q=80" alt="Body Slimming" class="svc-img"><div class="svc-body"><div class="svc-icon-row"><div class="svc-dot">⚡</div><span class="svc-tag">Body Contouring</span></div><h3>Advanced Body Slimming</h3><p>Non-invasive, painless technology to eliminate stubborn fat and sculpt your ideal body — visible results with zero downtime.</p><div class="svc-foot"><span class="svc-result">✓ Zero downtime</span><button class="svc-btn" onclick="go('book')">Book Now</button></div></div></div>
+        <div class="svc-card"><img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&h=220&fit=crop&q=80" alt="Nutrition" class="svc-img"><div class="svc-body"><div class="svc-icon-row"><div class="svc-dot">🥗</div><span class="svc-tag">Nutrition Science</span></div><h3>Diet &amp; Nutrition</h3><p>Shilpa crafts comprehensive meal plans rooted in science — built around foods you love and a lifestyle that fits you.</p><div class="svc-foot"><span class="svc-result">✓ Custom meal plans</span><button class="svc-btn" onclick="go('book')">Book Now</button></div></div></div>
+        <div class="svc-card"><img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=600&h=220&fit=crop&q=80" alt="Inch Loss" class="svc-img"><div class="svc-body"><div class="svc-icon-row"><div class="svc-dot">🎯</div><span class="svc-tag">Spot Reduction</span></div><h3>Precision Inch Loss Therapy</h3><p>Targeted localised treatments for belly, thighs, arms, and hips — measurable results using advanced electrotherapy protocols.</p><div class="svc-foot"><span class="svc-result">✓ Visible from session 1</span><button class="svc-btn" onclick="go('book')">Book Now</button></div></div></div>
+        <div class="svc-card"><img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=600&h=220&fit=crop&q=80" alt="Detox" class="svc-img"><div class="svc-body"><div class="svc-icon-row"><div class="svc-dot">✨</div><span class="svc-tag">Full Body Cleanse</span></div><h3>Detox &amp; Wellness Programs</h3><p>Eliminate toxins, reduce inflammation, and dramatically restore your energy with our signature 7–21 day cleansing programs.</p><div class="svc-foot"><span class="svc-result">✓ 7–21 day programs</span><button class="svc-btn" onclick="go('book')">Book Now</button></div></div></div>
+        <div class="svc-card"><img src="https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=600&h=220&fit=crop&q=80" alt="Post Pregnancy" class="svc-img"><div class="svc-body"><div class="svc-icon-row"><div class="svc-dot">❤️</div><span class="svc-tag">Mother's Wellness</span></div><h3>Post-Pregnancy Care</h3><p>Safe, gentle programs for new mothers — addressing hormonal shifts while reclaiming pre-pregnancy strength and confidence.</p><div class="svc-foot"><span class="svc-result">✓ Safe for breastfeeding</span><button class="svc-btn" onclick="go('book')">Book Now</button></div></div></div>
+      </div>
+      <div class="text-center mt-40"><button class="btn-g" onclick="go('services')">View All Services →</button></div>
+    </div>
+  </div>
+
+  <div class="testi-section">
+    <div class="testi-inner">
+      <div class="section-header">
+        <div class="sec-eyebrow">Client Stories</div>
+        <h2 class="sec-title">What Our Clients Say</h2>
+        <p class="sec-desc">Real transformations, real voices — from across Ahmedabad</p>
+      </div>
+      <div class="testi-slider"><div class="testi-track" id="testi-track"></div></div>
+      <div class="testi-nav">
+        <button class="tn-btn" onclick="tSlide(-1)">←</button>
+        <button class="tn-btn" onclick="tSlide(1)">→</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="why-strip">
+    <div class="why-inner">
+      <div><div class="why-eyebrow">Our Edge</div><h2 class="why-title">Why Choose Fit &amp; Shine?</h2></div>
+      <div class="why-grid">
+        <div class="why-card"><span class="why-icon">🏆</span><div class="why-num">01</div><h4>Expert Founders</h4><p>Kartik &amp; Shilpa bring 15+ years of certified expertise in wellness, nutrition, and body transformation.</p></div>
+        <div class="why-card"><span class="why-icon">🎯</span><div class="why-num">02</div><h4>100% Personalised</h4><p>No generic plans — every program is individually designed for your body type, history, lifestyle, and goals.</p></div>
+        <div class="why-card"><span class="why-icon">⚗️</span><div class="why-num">03</div><h4>Advanced Technology</h4><p>State-of-the-art non-invasive treatments — safe, painless, clinically proven, zero recovery time.</p></div>
+        <div class="why-card"><span class="why-icon">📊</span><div class="why-num">04</div><h4>Proven Results</h4><p>Over 1000 transformations and a 98% satisfaction rate — sustainable, long-lasting outcomes.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="articles-section">
+    <div class="articles-inner">
+      <div class="section-header">
+        <div class="sec-eyebrow">Wellness Insights</div>
+        <h2 class="sec-title">Health &amp; Wellness Tips</h2>
+        <p class="sec-desc">Expert advice from the Fit &amp; Shine team to support your journey</p>
+      </div>
+      <div class="articles-grid">
+        <div class="art-card"><img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&h=220&fit=crop&q=80" alt="" class="art-img"><div class="art-body"><span class="art-source">Nutrition</span><h4>5 Foods That Naturally Boost Your Metabolism</h4><p>Science-backed superfoods Shilpa recommends for faster, sustainable fat loss without deprivation.</p></div></div>
+        <div class="art-card"><img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=220&fit=crop&q=80" alt="" class="art-img"><div class="art-body"><span class="art-source">Weight Loss</span><h4>Why Crash Diets Always Fail — and What Actually Works</h4><p>Kartik explains why most weight loss attempts fail within 6 months and the approach that actually lasts.</p></div></div>
+        <div class="art-card"><img src="https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=600&h=220&fit=crop&q=80" alt="" class="art-img"><div class="art-body"><span class="art-source">Wellness</span><h4>Post-Pregnancy Recovery: What New Mothers Need to Know</h4><p>A compassionate guide on safely rebuilding strength, confidence, and fitness after having a baby.</p></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta-band">
+    <div class="cta-inner">
+      <div class="cta-eyebrow">Free Consultation</div>
+      <h2>Ready to Start Your<br>Transformation?</h2>
+      <p>Book your free consultation today — comprehensive assessment, personalised program recommendation, and a clear roadmap to your goals.</p>
+      <div class="cta-btns">
+        <button class="btn-cta-g" onclick="go('book')">📅 Book Free Consultation</button>
+        <button class="btn-cta-o" onclick="openWA()">💬 WhatsApp: +91 98244 55234</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ PAGE: SERVICES ═══ -->
+<div id="p-services" class="pg">
+  <div class="pg-hero"><div class="ph-eyebrow">What We Offer</div><h1>Our Wellness Services</h1><p>Six transformative programs, each designed with precision for your unique transformation</p></div>
+  <div class="sec max-w">
+    <div class="svc-detail-grid">
+      <div class="sdcard"><div class="sdcard-img-wrap"><img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=600&h=220&fit=crop&q=80" alt="" class="sdcard-img"><div class="sd-badge">Most Popular</div><div class="sd-num">01</div></div><div class="sdcard-body"><div class="sd-tag"><div class="sd-icon">⚖️</div>Weight Management</div><h3>Personalized Weight Loss Programs</h3><p>Medically-guided plans beginning with comprehensive body analysis. Crafted to your metabolism, lifestyle, and goals — combining targeted nutrition, movement, and proven treatments to help you lose weight safely and permanently.</p><div class="sdcard-foot"><span class="svc-result">✓ Results in 4–8 weeks</span><button class="svc-btn" onclick="go('book')">Book Now</button></div></div></div>
+      <div class="sdcard"><div class="sdcard-img-wrap"><img src="https://images.unsplash.com/photo-1607962837359-5e7e89f86776?w=600&h=220&fit=crop&q=80" alt="" class="sdcard-img"><div class="sd-badge">Non-Invasive</div><div class="sd-num">02</div></div><div class="sdcard-body"><div class="sd-tag"><div class="sd-icon">⚡</div>Body Contouring</div><h3>Advanced Body Slimming Treatments</h3><p>Cutting-edge technology targeting stubborn fat cells while tightening and toning your skin. Completely painless with zero downtime — visible, measurable results from your very first session.</p><div class="sdcard-foot"><span class="svc-result">✓ Zero downtime</span><button class="svc-btn" onclick="go('book')">Book Now</button></div></div></div>
+      <div class="sdcard"><div class="sdcard-img-wrap"><img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&h=220&fit=crop&q=80" alt="" class="sdcard-img"><div class="sd-badge">Expert-Led</div><div class="sd-num">03</div></div><div class="sdcard-body"><div class="sd-tag"><div class="sd-icon">🥗</div>Nutrition Science</div><h3>Diet &amp; Nutrition Consultation</h3><p>Shilpa designs comprehensive, easy-to-follow meal plans rooted in the latest nutritional science — accounting for food preferences, cultural choices, health conditions, and schedule for sustainable fat loss.</p><div class="sdcard-foot"><span class="svc-result">✓ Custom meal plans</span><button class="svc-btn" onclick="go('book')">Book Now</button></div></div></div>
+      <div class="sdcard"><div class="sdcard-img-wrap"><img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=600&h=220&fit=crop&q=80" alt="" class="sdcard-img"><div class="sd-badge">Targeted</div><div class="sd-num">04</div></div><div class="sdcard-body"><div class="sd-tag"><div class="sd-icon">🎯</div>Spot Reduction</div><h3>Precision Inch Loss Therapy</h3><p>Localised protocols targeting belly, thighs, arms, and hips. Combining advanced electrotherapy, massage techniques, and body wrap technologies for measurable circumference reduction from visit one.</p><div class="sdcard-foot"><span class="svc-result">✓ Visible from session 1</span><button class="svc-btn" onclick="go('book')">Book Now</button></div></div></div>
+      <div class="sdcard"><div class="sdcard-img-wrap"><img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=600&h=220&fit=crop&q=80" alt="" class="sdcard-img"><div class="sd-badge">Revitalising</div><div class="sd-num">05</div></div><div class="sdcard-body"><div class="sd-tag"><div class="sd-icon">✨</div>Full Body Cleanse</div><h3>Detox &amp; Wellness Programs</h3><p>Therapeutic treatments, anti-inflammatory nutrition, and metabolism-boosting protocols to eliminate toxins, reduce inflammation, improve gut health, and dramatically restore your energy levels.</p><div class="sdcard-foot"><span class="svc-result">✓ 7–21 day programs</span><button class="svc-btn" onclick="go('book')">Book Now</button></div></div></div>
+      <div class="sdcard"><div class="sdcard-img-wrap"><img src="https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=600&h=220&fit=crop&q=80" alt="" class="sdcard-img"><div class="sd-badge">Safe &amp; Gentle</div><div class="sd-num">06</div></div><div class="sdcard-body"><div class="sd-tag"><div class="sd-icon">❤️</div>Mother's Wellness</div><h3>Post-Pregnancy Weight Management</h3><p>Specially adapted for new mothers — addressing hormonal changes, diastasis recti, and nutritional needs while safely helping you regain strength, shape, and confidence after birth.</p><div class="sdcard-foot"><span class="svc-result">✓ Safe for breastfeeding</span><button class="svc-btn" onclick="go('book')">Book Now</button></div></div></div>
+    </div>
+  </div>
+  <div class="process-strip">
+    <div class="process-inner">
+      <div class="process-eyebrow">How It Works</div>
+      <h2 class="process-title">Your transformation journey, step by step</h2>
+      <div class="process-steps">
+        <div class="ps"><div class="ps-num">01</div><h4>Free Consultation</h4><p>A detailed conversation about your health history, lifestyle, and goals with our experts.</p></div>
+        <div class="ps"><div class="ps-num">02</div><h4>Body Analysis</h4><p>Comprehensive measurements, body composition analysis, and metabolic assessment.</p></div>
+        <div class="ps"><div class="ps-num">03</div><h4>Custom Program</h4><p>A fully personalised treatment and nutrition plan built around your unique profile.</p></div>
+        <div class="ps"><div class="ps-num">04</div><h4>Active Treatment</h4><p>Regular sessions with our experts using the most advanced wellness technology available.</p></div>
+        <div class="ps"><div class="ps-num">05</div><h4>Track &amp; Refine</h4><p>Weekly progress tracking with plan adjustments to keep you on the fastest path to your goal.</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="benefits-sec">
+    <div class="benefits-inner">
+      <div class="section-header"><div class="sec-eyebrow">Every Program Includes</div><h2 class="sec-title">Complete care, from day one</h2></div>
+      <div class="benefits-grid">
+        <div class="bc"><div class="bc-icon">📋</div><div><h4>Comprehensive Health Assessment</h4><p>Full body analysis, medical history review, and lifestyle audit before your program begins.</p></div></div>
+        <div class="bc"><div class="bc-icon">🎯</div><div><h4>Individually Tailored Plan</h4><p>Your program is built exclusively for your body type, metabolism, schedule, and goals.</p></div></div>
+        <div class="bc"><div class="bc-icon">📊</div><div><h4>Weekly Progress Monitoring</h4><p>Regular measurements to track results, celebrate wins, and fine-tune your program.</p></div></div>
+        <div class="bc"><div class="bc-icon">💬</div><div><h4>WhatsApp Support Channel</h4><p>Direct access to your wellness coach on WhatsApp between sessions.</p></div></div>
+        <div class="bc"><div class="bc-icon">🥗</div><div><h4>Personalised Meal Plans</h4><p>Detailed nutrition guides with recipes and shopping lists around foods you enjoy.</p></div></div>
+        <div class="bc"><div class="bc-icon">🌱</div><div><h4>Lifestyle &amp; Habit Coaching</h4><p>Sleep, stress management, and daily habit coaching to make your transformation permanent.</p></div></div>
+      </div>
+    </div>
+  </div>
+  <div class="cta-band"><div class="cta-inner"><h2>Ready to begin your transformation?</h2><p>Book a free consultation and discover which program is perfect for you.</p><div class="cta-btns"><button class="btn-cta-g" onclick="go('book')">📅 Schedule My Free Consultation</button></div></div></div>
+</div>
+
+<!-- ═══ PAGE: ABOUT ═══ -->
+<div id="p-about" class="pg">
+  <div class="pg-hero"><div class="ph-eyebrow">Our Story</div><h1>About Fit &amp; Shine</h1><p>Trusted by over 1000 clients across Ahmedabad since our founding</p></div>
+  <div class="sec max-w">
+    <div class="about-page-grid">
+      <div>
+        <div class="about-eyebrow">Who We Are</div>
+        <h2 class="about-title">Wellness rooted in science,<br>guided by heart</h2>
+        <p class="about-desc">Fit &amp; Shine Wellness Centre was founded by husband-and-wife team Kartik and Shilpa with one belief: every person deserves expert guidance on their wellness journey. For 15+ years we've been transforming lives in Ahmedabad — combining advanced treatments with personalised nutrition science and compassionate coaching.</p>
+        <p class="about-desc">We address root causes — hormonal imbalances, poor nutrition, metabolic issues — to create sustainable wellness that truly lasts.</p>
+        <button class="btn-g mt-24" onclick="go('book')">Book Free Consultation →</button>
+      </div>
+      <div class="about-page-img"><img src="https://images.unsplash.com/photo-1609899464726-209cbc1b82d0?w=700&h=400&fit=crop&q=85" alt="Fit and Shine Ahmedabad"></div>
+    </div>
+    <div class="founder-grid">
+      <div class="fcard"><img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&h=280&fit=crop&q=85" alt="Kartik Co-Founder"><div class="fcard-body"><div class="fcard-role">Co-Founder &amp; Wellness Expert</div><h3 class="fcard-name">Kartik</h3><p class="fcard-desc">With 15+ years in fitness and wellness, Kartik specialises in transformative weight loss. His holistic, results-driven approach has helped thousands of clients across Ahmedabad rebuild their confidence and reclaim their health.</p></div></div>
+      <div class="fcard"><img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=280&fit=crop&q=85" alt="Shilpa Co-Founder"><div class="fcard-body"><div class="fcard-role">Co-Founder &amp; Nutrition Specialist</div><h3 class="fcard-name">Shilpa</h3><p class="fcard-desc">Shilpa is a certified nutritionist and wellness coach specialising in sustainable diet planning. Her meal plans are science-backed, culturally aware, easy to follow, and deeply effective at accelerating transformation.</p></div></div>
+    </div>
+  </div>
+  <div class="mvv-section">
+    <div class="max-w">
+      <div class="section-header"><div class="sec-eyebrow">Our Foundation</div><h2 class="sec-title">Mission, Vision &amp; Values</h2></div>
+      <div class="mvv-grid">
+        <div class="mvv-card"><h3>Our Mission</h3><p>To empower every individual to achieve optimal health through personalised, science-backed programs that deliver real, sustainable results they can maintain for life.</p></div>
+        <div class="mvv-card"><h3>Our Vision</h3><p>To be Ahmedabad's most loved and trusted wellness centre, transforming thousands of lives each year through innovation, compassion, and proven expertise.</p></div>
+        <div class="mvv-card"><h3>Our Values</h3><p>Integrity, Excellence, Compassion, and Results — these four pillars guide everything we do and define every relationship we build with our clients.</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ PAGE: TESTIMONIALS ═══ -->
+<div id="p-testimonials" class="pg">
+  <div class="pg-hero"><div class="ph-eyebrow">Real Results</div><h1>Success Stories</h1><p>Real transformations from real people across Ahmedabad</p></div>
+  <div class="sec max-w">
+    <div class="testi-page-grid" id="full-testi-grid"></div>
+    <div class="testi-stats-bar">
+      <div class="testi-stat"><div class="ts-num">1000+</div><div class="ts-lbl">Success Stories</div></div>
+      <div class="testi-stat"><div class="ts-num">5000+</div><div class="ts-lbl">Kgs Lost Together</div></div>
+      <div class="testi-stat"><div class="ts-num">98%</div><div class="ts-lbl">Satisfaction Rate</div></div>
+      <div class="testi-stat"><div class="ts-num">15+</div><div class="ts-lbl">Years of Excellence</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ PAGE: CONTACT ═══ -->
+<div id="p-contact" class="pg">
+  <div class="pg-hero"><div class="ph-eyebrow">Find Us</div><h1>Contact Us</h1><p>Visit us at Gota, Ahmedabad or reach out on WhatsApp — we're here to help</p></div>
+  <div class="sec max-w">
+    <div class="contact-grid">
+      <div class="info-card"><span class="ib-icon">📍</span><div><h4>Our Location</h4><p>Gate No 1, Block-E, GANESH GLORY, 213A, Sarkhej–Gandhinagar Hwy, Gota, Ahmedabad, Gujarat 382470</p><a href="https://maps.app.goo.gl/1pSUGmrikTovNou16" target="_blank" rel="noopener noreferrer" class="info-link mt-6">Get Directions →</a></div></div>
+      <div class="info-card clickable" onclick="openWA()"><span class="ib-icon">💬</span><div><h4>WhatsApp</h4><p>+91 98244 55234</p><span class="info-link mt-6">Chat with us now →</span></div></div>
+      <div class="info-card"><span class="ib-icon">📞</span><div><h4>Phone</h4><a href="tel:+919824455234" class="info-link">+91 98244 55234</a><p class="mt-4">Mon–Sat: 7:00 AM – 8:00 PM</p></div></div>
+      <div class="info-card"><span class="ib-icon">📧</span><div><h4>Email</h4><a href="mailto:info@fitandshine.com" class="info-link">info@fitandshine.com</a></div></div>
+      <div class="info-card"><span class="ib-icon">📸</span><div><h4>Instagram</h4><a href="https://www.instagram.com/coachkartikshilpa/" target="_blank" rel="noopener noreferrer" class="info-link">@coachkartikshilpa</a></div></div>
+      <div class="info-card"><span class="ib-icon">🕐</span><div><h4>Business Hours</h4><p>Monday – Saturday: 7:00 AM – 8:00 PM</p><p class="mt-4">Sunday: 10:00 AM – 6:00 PM</p></div></div>
+    </div>
+    <div class="text-center mt-40"><button class="btn-g" onclick="go('book')">Book Your Free Consultation →</button></div>
+  </div>
+</div>
+
+<!-- ═══ PAGE: BOOK APPOINTMENT ═══ -->
+<div id="p-book" class="pg">
+  <div class="book-layout">
+    <div class="book-left">
+      <div class="book-left-inner">
+        <div class="bk-eyebrow"><span class="pulse"></span> Free Consultation</div>
+        <h2>Book your <em>transformation</em> today</h2>
+        <p class="book-left-desc">Your free consultation includes a full body assessment, personalised program recommendation, and a clear roadmap. No pressure, no obligation.</p>
+        <div class="book-phone" onclick="openWA()">
+          <div class="book-phone-icon">📱</div>
+          <div><span class="book-phone-label">WhatsApp or Call</span><span class="book-phone-num">+91 98244 55234</span></div>
+        </div>
+        <div class="book-features">
+          <div class="bk-feat"><div class="bk-chk">✓</div>100% free — no hidden charges ever</div>
+          <div class="bk-feat"><div class="bk-chk">✓</div>Expert consultation with Kartik or Shilpa</div>
+          <div class="bk-feat"><div class="bk-chk">✓</div>Personalised program designed just for you</div>
+          <div class="bk-feat"><div class="bk-chk">✓</div>Walk-in or appointment — both welcome</div>
+          <div class="bk-feat"><div class="bk-chk">✓</div>Monday–Saturday: 7:00 AM – 8:00 PM</div>
+        </div>
+        <div class="book-team">
+          <div class="book-team-label">Your Wellness Experts</div>
+          <div class="book-team-row">
+            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=120&h=120&fit=crop&q=80" alt="Kartik" class="book-avatar">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=120&h=120&fit=crop&q=80" alt="Shilpa" class="book-avatar">
+            <span class="book-team-text">Kartik &amp; Shilpa<br><strong>15+ years combined expertise</strong></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="book-right">
+      <h3 class="bk-form-title">Schedule Your Visit</h3>
+      <p class="bk-form-sub">Fill in the details below — takes less than 2 minutes</p>
+      <div class="bk-toast" id="bk-toast">✅ Appointment booked! We'll send a WhatsApp confirmation shortly.</div>
+      <form id="book-form" onsubmit="bkSubmit(event)">
+        <div class="fg-row">
+          <div class="fg"><label>First Name *</label><input type="text" placeholder="Priya" required></div>
+          <div class="fg"><label>Last Name *</label><input type="text" placeholder="Sharma" required></div>
+        </div>
+        <div class="fg"><label>Phone / WhatsApp *</label><input type="tel" placeholder="+91 98765 43210" required></div>
+        <div class="fg"><label>Email Address</label><input type="email" placeholder="you@email.com"></div>
+        <div class="fg"><label>Service Interested In *</label><select required><option value="">Select a service...</option><option>Weight Loss Programs</option><option>Body Slimming Treatments</option><option>Diet &amp; Nutrition Consultation</option><option>Inch Loss Therapy</option><option>Detox &amp; Wellness Programs</option><option>Post-Pregnancy Care</option></select></div>
+        <div class="fg"><label>Your Primary Goal</label><select><option value="">Select your main goal...</option><option>Lose weight (general)</option><option>Lose belly fat / inch loss</option><option>Post-pregnancy recovery</option><option>Body toning &amp; slimming</option><option>Detox &amp; improve energy</option><option>Improve nutrition &amp; diet</option><option>Overall wellness</option></select></div>
+        <div class="fg-row">
+          <div class="fg"><label>Preferred Date</label><input type="date" id="bk-date"></div>
+          <div class="fg"><label>Preferred Time</label><select><option value="">Select time...</option><option>7:00 AM – 10:00 AM</option><option>10:00 AM – 1:00 PM</option><option>1:00 PM – 4:00 PM</option><option>4:00 PM – 8:00 PM</option></select></div>
+        </div>
+        <div class="fg"><label>Health Notes / Questions</label><textarea placeholder="Any health conditions, concerns, or specific questions for our team..."></textarea></div>
+        <button type="submit" class="btn-submit">📅 Confirm My Booking</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="fl-logo-wrap"><div class="fl-logo-icon">🌿</div><span class="fl-logo-name">Fit &amp; Shine</span></div>
+      <p class="fl-desc">Ahmedabad's most trusted wellness centre — transforming lives through personalised weight loss, advanced body treatments, and expert nutrition science since 2009.</p>
+      <div class="fl-contacts">
+        <div class="flc"><span class="flc-icon">📞</span><span class="flc-text"><a href="tel:+919824455234">+91 98244 55234</a></span></div>
+        <div class="flc"><span class="flc-icon">💬</span><span class="flc-text"><a href="#" onclick="openWA();return false">WhatsApp Us Now</a></span></div>
+        <div class="flc"><span class="flc-icon">📍</span><span class="flc-text">Gate No 1, Ganesh Glory, Gota, Ahmedabad 382470</span></div>
+        <div class="flc"><span class="flc-icon">🕐</span><span class="flc-text">Mon–Sat: 7 AM–8 PM | Sun: 10 AM–6 PM</span></div>
+      </div>
+    </div>
+    <div><div class="fc-head">Quick Links</div><ul class="fc-links"><li onclick="go('home')">Home</li><li onclick="go('services')">Services</li><li onclick="go('about')">About Us</li><li onclick="go('testimonials')">Testimonials</li><li onclick="go('contact')">Contact Us</li><li onclick="go('book')">Book Consultation</li></ul></div>
+    <div><div class="fc-head">Our Services</div><ul class="fc-links"><li onclick="go('services')">Weight Loss Programs</li><li onclick="go('services')">Body Slimming</li><li onclick="go('services')">Diet &amp; Nutrition</li><li onclick="go('services')">Inch Loss Therapy</li><li onclick="go('services')">Detox &amp; Wellness</li><li onclick="go('services')">Post-Pregnancy Care</li></ul></div>
+    <div><div class="fc-head">Connect With Us</div><ul class="fc-links"><li onclick="openWA()">💬 WhatsApp Us</li><li><a href="tel:+919824455234">📞 +91 98244 55234</a></li><li><a href="mailto:info@fitandshine.com">📧 info@fitandshine.com</a></li><li><a href="https://www.instagram.com/coachkartikshilpa/" target="_blank" rel="noopener noreferrer">📸 @coachkartikshilpa</a></li></ul></div>
+  </div>
+  <div class="footer-bot">
+    <p>© 2025 Fit &amp; Shine Wellness Centre, Ahmedabad. All rights reserved.</p>
+    <div class="fbot-links"><a href="#">Privacy Policy</a><a href="#">Terms of Use</a><a href="#" onclick="go('contact');return false">Contact</a></div>
+  </div>
+</footer>
+
+<div class="wa-float">
+  <div class="wa-tip">Chat on WhatsApp →</div>
+  <button class="wa-btn" onclick="openWA()" aria-label="Chat on WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.139.565 4.144 1.54 5.889L.057 23.993l6.311-1.659A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.816 9.816 0 01-5.006-1.37l-.359-.214-3.741.983 1.001-3.636-.234-.374A9.786 9.786 0 012.182 12C2.182 6.58 6.58 2.182 12 2.182S21.818 6.58 21.818 12 17.42 21.818 12 21.818z"/></svg>
+  </button>
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>
