@@ -306,17 +306,11 @@ function initCounters() {
 }
 
 /* ============================================================
-   9. TESTIMONIALS
+   9. TESTIMONIALS — HOME CAROUSEL
    ============================================================ */
 
 var testiIdx = 0;
 
-/**
- * Create a testimonial card HTML element.
- * @param {string} className - CSS class name
- * @param {Object} r - Review data object
- * @returns {HTMLElement}
- */
 function makeTestiCard(className, r) {
   var d = document.createElement('div');
   d.className = className;
@@ -336,43 +330,180 @@ function makeTestiCard(className, r) {
 
 function initTestimonials() {
   var track = document.getElementById('testi-track');
-  var fullGrid = document.getElementById('full-testi-grid');
-
   REVIEWS_DATA.forEach(function (r) {
     if (track) track.appendChild(makeTestiCard('testi-card', r));
-    if (fullGrid) fullGrid.appendChild(makeTestiCard('testi-card', r));
   });
 }
 
-/**
- * Slide testimonial carousel.
- * @param {number} dir - 1 for next, -1 for previous
- */
 function tSlide(dir) {
   var track = document.getElementById('testi-track');
   if (!track) return;
-
   var cards = track.querySelectorAll('.testi-card');
   if (cards.length === 0) return;
-
-  var visibleCount;
-  if (window.innerWidth <= 768) {
-    visibleCount = 1;
-  } else if (window.innerWidth <= 1024) {
-    visibleCount = 2;
-  } else {
-    visibleCount = 3;
-  }
-
+  var visibleCount = window.innerWidth <= 768 ? 1 : window.innerWidth <= 1024 ? 2 : 3;
   var max = Math.max(0, cards.length - visibleCount);
   testiIdx = Math.max(0, Math.min(testiIdx + dir, max));
-
-  var cardW = cards[0].offsetWidth + 22; // 22 = gap
+  var cardW = cards[0].offsetWidth + 22;
   track.style.transform = 'translateX(-' + (testiIdx * cardW) + 'px)';
 }
 
 /* ============================================================
-   10. BOOKING FORM
+   10. TESTIMONIALS PAGE — GALLERY, VIDEOS, REVIEWS
+   ============================================================ */
+
+var CLINIC_PHOTOS = [
+  {url:'https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=560&h=400&fit=crop&q=80',label:'Reception & Welcome Area'},
+  {url:'https://images.unsplash.com/photo-1596510914966-76e04c3e42b5?w=560&h=400&fit=crop&q=80',label:'Body Slimming Treatment Room'},
+  {url:'https://images.unsplash.com/photo-1607962837359-5e7e89f86776?w=560&h=400&fit=crop&q=80',label:'Advanced Treatment Session'},
+  {url:'https://images.unsplash.com/photo-1559757175-5700dde675bc?w=560&h=400&fit=crop&q=80',label:'Inch Loss Therapy'},
+  {url:'https://images.unsplash.com/photo-1547592180-85f173990554?w=560&h=400&fit=crop&q=80',label:'Detox & Wellness Suite'},
+  {url:'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=560&h=400&fit=crop&q=80',label:'Nutrition Consultation'},
+  {url:'https://images.unsplash.com/photo-1609899464726-209cbc1b82d0?w=560&h=400&fit=crop&q=80',label:'Expert Wellness Guidance'},
+  {url:'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=560&h=400&fit=crop&q=80',label:'Fitness & Body Assessment'},
+  {url:'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=560&h=400&fit=crop&q=80',label:'Personalised Training Session'},
+  {url:'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=560&h=400&fit=crop&q=80',label:'Wellness & Mindfulness Area'},
+  {url:'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=560&h=400&fit=crop&q=80',label:'Post-Treatment Recovery'},
+  {url:'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=560&h=400&fit=crop&q=80',label:'Client Progress Check-in'},
+  {url:'https://images.unsplash.com/photo-1556817411-31ae72fa3ea0?w=560&h=400&fit=crop&q=80',label:'Strength & Conditioning'},
+  {url:'https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=560&h=400&fit=crop&q=80',label:'Clinic Consultation Room'},
+  {url:'https://images.unsplash.com/photo-1571945153237-4929e783af4a?w=560&h=400&fit=crop&q=80',label:'Personalised Diet Planning'},
+];
+
+var VIDEO_TESTIMONIALS = [
+  {thumb:'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=600&h=300&fit=crop&q=80',ytId:'dQw4w9WgXcQ',tag:'Weight Loss',title:'How I Lost 20 Kgs in 4 Months',name:'Meera Gandhi',avatar:'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop',result:'Lost 20 kgs',duration:'4:32'},
+  {thumb:'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=300&fit=crop&q=80',ytId:'dQw4w9WgXcQ',tag:'Body Transformation',title:'My Complete Body Transformation Story',name:'Rohan Kapoor',avatar:'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop',result:'Lost 15 kgs + 8 inches',duration:'6:10'},
+  {thumb:'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=600&h=300&fit=crop&q=80',ytId:'dQw4w9WgXcQ',tag:'Post-Pregnancy',title:'Back to Pre-Pregnancy Shape in 3 Months',name:'Anjali Joshi',avatar:'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=80&h=80&fit=crop',result:'Regained pre-pregnancy fitness',duration:'5:18'},
+  {thumb:'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=600&h=300&fit=crop&q=80',ytId:'dQw4w9WgXcQ',tag:'Inch Loss',title:'Lost 6 Inches in 6 Weeks — My Journey',name:'Priya Desai',avatar:'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=80&h=80&fit=crop',result:'6 inches in 6 weeks',duration:'3:55'},
+  {thumb:'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600&h=300&fit=crop&q=80',ytId:'dQw4w9WgXcQ',tag:'Detox & Wellness',title:'21-Day Detox Changed My Life Completely',name:'Karan Trivedi',avatar:'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop',result:'Lost 8 kgs + energy restored',duration:'7:02'},
+];
+
+var FULL_REVIEWS = [
+  {name:'Priya Sharma',loc:'Ahmedabad',text:'Lost 15 kgs in just 3 months! The team is incredibly supportive and the program was perfectly tailored to my busy lifestyle. The inch loss therapy is incredible.',img:'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop',badge:'Weight Loss Program'},
+  {name:'Rahul Patel',loc:'Gota',text:"Amazing results — 4 inches off my waist in just 6 weeks. Kartik's expertise and Shilpa's nutrition plan together made the impossible possible. Best in Ahmedabad!",img:'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop',badge:'Inch Loss Therapy'},
+  {name:'Sneha Desai',loc:'Ahmedabad',text:"Shilpa's nutrition consultation completely changed my relationship with food. I don't feel like I'm on a diet at all, yet the results are absolutely remarkable.",img:'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=80&h=80&fit=crop',badge:'Nutrition Consultation'},
+  {name:'Amit Shah',loc:'Sarkhej',text:"Professional, results-driven, and genuinely caring. Lost stubborn belly fat I'd had for years. The body slimming treatment was painless and incredibly effective.",img:'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=80&h=80&fit=crop',badge:'Body Slimming'},
+  {name:'Pooja Mehta',loc:'Ahmedabad',text:'The post-pregnancy program was exactly what I needed — so safe, so gentle, and the results have been absolutely incredible. Got back to my original weight in 3 months!',img:'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=80&h=80&fit=crop',badge:'Post-Pregnancy Care'},
+  {name:'Karan Trivedi',loc:'Gota',text:"Completed the 21-day detox. Life-changing — my energy is through the roof, skin glowing, and I've lost 8 kgs. This clinic is unlike anything else in Ahmedabad.",img:'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop',badge:'Detox Program'},
+  {name:'Deepa Nair',loc:'Ahmedabad',text:'I had been struggling with weight for over 5 years and tried everything. Fit & Shine was the only place that truly understood my body and designed a plan that actually worked.',img:'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=80&h=80&fit=crop',badge:'Weight Loss Program'},
+  {name:'Vikram Joshi',loc:'Bopal',text:'The inch loss therapy combined with nutrition guidance was a game-changer. Lost 12 kgs over 10 weeks without any harsh dieting. Highly recommend to everyone!',img:'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=80&h=80&fit=crop',badge:'Inch Loss + Nutrition'},
+  {name:'Nisha Patel',loc:'Ahmedabad',text:'Absolutely loved the team here. Every session was professional and effective. Kartik and Shilpa genuinely care about each client's journey. Five stars without hesitation!',img:'https://images.unsplash.com/photo-1546961342-ea5f62d5a27b?w=80&h=80&fit=crop',badge:'Wellness Program'},
+];
+
+function initClinicGallery() {
+  var track = document.getElementById('gallery-track');
+  if (!track) return;
+
+  var allPhotos = CLINIC_PHOTOS.concat(CLINIC_PHOTOS); // duplicate for seamless scroll
+  allPhotos.forEach(function (p) {
+    var d = document.createElement('div');
+    d.className = 'gphoto';
+    d.innerHTML = '<img src="' + p.url + '" alt="' + p.label + '" loading="lazy"><div class="gphoto-label">' + p.label + '</div>';
+    track.appendChild(d);
+  });
+
+  // Dot cycling animation
+  var dotIdx = 0;
+  var dots = document.querySelectorAll('.gallery-dot');
+  if (dots.length > 0) {
+    setInterval(function () {
+      dots[dotIdx].classList.remove('on');
+      dotIdx = (dotIdx + 1) % dots.length;
+      dots[dotIdx].classList.add('on');
+    }, 4000);
+  }
+}
+
+function initVideoTestimonials() {
+  var grid = document.getElementById('video-testi-grid');
+  if (!grid) return;
+
+  VIDEO_TESTIMONIALS.forEach(function (v) {
+    var d = document.createElement('div');
+    d.className = 'vtcard';
+    d.innerHTML =
+      '<div class="vt-thumb">' +
+        '<img src="' + v.thumb + '" alt="' + v.title + '" loading="lazy">' +
+        '<div class="vt-overlay">' +
+          '<div class="vt-play">' +
+            '<svg width="22" height="22" viewBox="0 0 24 24" fill="#003d2e"><path d="M8 5v14l11-7z"/></svg>' +
+          '</div>' +
+        '</div>' +
+        '<span class="vt-duration">' + v.duration + '</span>' +
+      '</div>' +
+      '<div class="vt-info">' +
+        '<span class="vt-tag">' + v.tag + '</span>' +
+        '<h3>' + v.title + '</h3>' +
+        '<div class="vt-meta">' +
+          '<img src="' + v.avatar + '" class="vt-avatar" alt="' + v.name + '" loading="lazy">' +
+          '<div>' +
+            '<span class="vt-name">' + v.name + '</span>' +
+            '<div class="vt-result">&#10003; ' + v.result + '</div>' +
+          '</div>' +
+        '</div>' +
+      '</div>';
+    (function (ytId, title) {
+      d.addEventListener('click', function () { openVideoModal(ytId, title); });
+    })(v.ytId, v.title);
+    grid.appendChild(d);
+  });
+}
+
+function initFullReviews() {
+  var grid = document.getElementById('testi-reviews-grid');
+  if (!grid) return;
+
+  FULL_REVIEWS.forEach(function (r) {
+    var d = document.createElement('div');
+    d.className = 'tr-card';
+    d.innerHTML =
+      '<div class="tr-quote">\u201C</div>' +
+      '<div class="tr-stars">\u2605\u2605\u2605\u2605\u2605</div>' +
+      '<p class="tr-text">' + r.text + '</p>' +
+      '<div class="tr-author">' +
+        '<img src="' + r.img + '" class="tr-avatar" alt="' + r.name + '" loading="lazy">' +
+        '<div>' +
+          '<div class="tr-name">' + r.name + '</div>' +
+          '<div class="tr-loc">' + r.loc + '</div>' +
+          '<span class="tr-badge">' + r.badge + '</span>' +
+        '</div>' +
+      '</div>';
+    grid.appendChild(d);
+  });
+}
+
+/* ── VIDEO MODAL ── */
+function openVideoModal(ytId, title) {
+  var backdrop = document.getElementById('vmodal-backdrop');
+  var frame = document.getElementById('vmodal-frame');
+  if (!backdrop || !frame) return;
+  frame.src = 'https://www.youtube.com/embed/' + ytId + '?autoplay=1&rel=0&modestbranding=1';
+  backdrop.classList.add('open');
+}
+
+function closeVideoModal() {
+  var backdrop = document.getElementById('vmodal-backdrop');
+  var frame = document.getElementById('vmodal-frame');
+  if (!backdrop || !frame) return;
+  frame.src = '';
+  backdrop.classList.remove('open');
+}
+
+function initVideoModal() {
+  var closeBtn = document.getElementById('vmodal-close');
+  var backdrop = document.getElementById('vmodal-backdrop');
+  if (closeBtn) closeBtn.addEventListener('click', closeVideoModal);
+  if (backdrop) {
+    backdrop.addEventListener('click', function (e) {
+      if (e.target === backdrop) closeVideoModal();
+    });
+  }
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeVideoModal();
+  });
+}
+
+/* ============================================================
+   11. BOOKING FORM
    ============================================================ */
 
 function initBookingForm() {
@@ -398,7 +529,7 @@ function bkSubmit(e) {
 }
 
 /* ============================================================
-   11. KEYBOARD NAVIGATION
+   12. KEYBOARD NAVIGATION
    ============================================================ */
 
 function initKeyboard() {
@@ -412,16 +543,19 @@ function initKeyboard() {
 }
 
 /* ============================================================
-   12. INIT — runs when DOM is ready
+   13. INIT — runs when DOM is ready
    ============================================================ */
 
 document.addEventListener('DOMContentLoaded', function () {
   initSlider();
   initTestimonials();
+  initClinicGallery();
+  initVideoTestimonials();
+  initFullReviews();
+  initVideoModal();
   initBookingForm();
   initKeyboard();
 
-  // Delay counters and bars slightly so they feel reactive
   setTimeout(function () {
     initCounters();
     animateBars();

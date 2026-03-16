@@ -109,12 +109,19 @@
   /* Process Steps */
   .process-steps { grid-template-columns: 1fr 1fr; }
 
-  /* Testimonials */
+  /* Testimonials carousel */
   .testi-card { min-width: 100%; }
-  .testi-page-grid { grid-template-columns: 1fr; }
+
+  /* Testimonials page */
+  .testi-reviews-grid { grid-template-columns: 1fr; }
+  .video-testi-grid { grid-template-columns: 1fr; }
   .testi-stats-bar { grid-template-columns: 1fr 1fr; }
   .testi-stat:nth-child(2n) { border-right: none; }
+  .testi-stat:nth-child(n+3) { border-top: 1px solid rgba(168,230,0,.12); }
   .testi-stat { padding: 12px 8px; }
+
+  /* Gallery */
+  .gphoto { width: 220px; height: 160px; }
 
   /* Articles */
   .articles-grid { grid-template-columns: 1fr; }

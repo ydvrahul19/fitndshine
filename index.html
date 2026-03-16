@@ -283,16 +283,66 @@
 
 <!-- ═══ PAGE: TESTIMONIALS ═══ -->
 <div id="p-testimonials" class="pg">
-  <div class="pg-hero"><div class="ph-eyebrow">Real Results</div><h1>Success Stories</h1><p>Real transformations from real people across Ahmedabad</p></div>
-  <div class="sec max-w">
-    <div class="testi-page-grid" id="full-testi-grid"></div>
-    <div class="testi-stats-bar">
-      <div class="testi-stat"><div class="ts-num">1000+</div><div class="ts-lbl">Success Stories</div></div>
-      <div class="testi-stat"><div class="ts-num">5000+</div><div class="ts-lbl">Kgs Lost Together</div></div>
-      <div class="testi-stat"><div class="ts-num">98%</div><div class="ts-lbl">Satisfaction Rate</div></div>
-      <div class="testi-stat"><div class="ts-num">15+</div><div class="ts-lbl">Years of Excellence</div></div>
+
+  <div class="pg-hero">
+    <div class="ph-eyebrow">Real Results</div>
+    <h1>Success Stories</h1>
+    <p>Real transformations from real people across Ahmedabad — in their own words</p>
+  </div>
+
+  <!-- SECTION 1: CLINIC PHOTO GALLERY -->
+  <div class="testi-sec" style="padding:60px 0 48px;background:var(--bg)">
+    <div class="testi-sec-inner">
+      <div class="sec-eyebrow" style="text-align:center;margin-bottom:8px">Inside Fit &amp; Shine</div>
+      <h2 class="sec-title">Our Clinic &amp; Sessions</h2>
+      <p class="sec-desc" style="margin-bottom:36px">A peek inside our state-of-the-art wellness centre in Gota, Ahmedabad</p>
+    </div>
+    <div class="gallery-outer">
+      <div class="gallery-mask">
+        <div class="gallery-track" id="gallery-track"></div>
+      </div>
+    </div>
+    <div class="gallery-dots" id="gallery-dots">
+      <button class="gallery-dot on" aria-label="Photo set 1"></button>
+      <button class="gallery-dot" aria-label="Photo set 2"></button>
+      <button class="gallery-dot" aria-label="Photo set 3"></button>
     </div>
   </div>
+
+  <!-- SECTION 2: VIDEO TESTIMONIALS -->
+  <div class="testi-sec alt">
+    <div class="testi-sec-inner">
+      <div class="sec-eyebrow" style="text-align:center;margin-bottom:8px">Video Testimonials</div>
+      <h2 class="sec-title">Watch Their Journeys</h2>
+      <p class="sec-desc">Our clients share their transformation stories — in their own words, on camera</p>
+      <div class="video-testi-grid" id="video-testi-grid"></div>
+    </div>
+  </div>
+
+  <!-- SECTION 3: TEXT REVIEWS -->
+  <div class="testi-sec">
+    <div class="testi-sec-inner">
+      <div class="sec-eyebrow" style="text-align:center;margin-bottom:8px">Client Reviews</div>
+      <h2 class="sec-title">What Our Clients Say</h2>
+      <p class="sec-desc">Verified reviews from clients who completed programs at Fit &amp; Shine</p>
+      <div class="testi-reviews-grid" id="testi-reviews-grid"></div>
+      <div class="testi-stats-bar">
+        <div class="testi-stat"><span class="ts-num">1000+</span><span class="ts-lbl">Success Stories</span></div>
+        <div class="testi-stat"><span class="ts-num">5000+</span><span class="ts-lbl">Kgs Lost Together</span></div>
+        <div class="testi-stat"><span class="ts-num">98%</span><span class="ts-lbl">Satisfaction Rate</span></div>
+        <div class="testi-stat"><span class="ts-num">15+</span><span class="ts-lbl">Years of Excellence</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VIDEO MODAL -->
+  <div class="vmodal-backdrop" id="vmodal-backdrop">
+    <div class="vmodal-box">
+      <button class="vmodal-close-btn" id="vmodal-close" aria-label="Close video">&#10005;</button>
+      <iframe id="vmodal-frame" src="" allowfullscreen allow="autoplay; encrypted-media"></iframe>
+    </div>
+  </div>
+
 </div>
 
 <!-- ═══ PAGE: CONTACT ═══ -->
