@@ -381,91 +381,23 @@ function tSlide(dir) {
    10. TESTIMONIALS PAGE — GALLERY, VIDEOS, REVIEWS
    ============================================================ */
 
+/* ── GALLERY DOT CYCLING ── */
 function initClinicGallery() {
-  var track = document.getElementById('gallery-track');
-  if (!track) return;
-
-  var allPhotos = CLINIC_PHOTOS.concat(CLINIC_PHOTOS);
-  allPhotos.forEach(function (p) {
-    var d = document.createElement('div');
-    d.className = 'gphoto';
-    d.innerHTML = '<img src="' + p.url + '" alt="' + p.label + '" loading="lazy"><div class="gphoto-label">' + p.label + '</div>';
-    track.appendChild(d);
-  });
-
+  /* Photos are baked into HTML — just run dot animation */
   var dotIdx = 0;
   var dots = document.querySelectorAll('.gallery-dot');
-  if (dots.length) {
-    setInterval(function () {
-      dots[dotIdx].classList.remove('on');
-      dotIdx = (dotIdx + 1) % dots.length;
-      dots[dotIdx].classList.add('on');
-    }, 4000);
-  }
-}
-
-function initVideoTestimonials() {
-  var grid = document.getElementById('video-testi-grid');
-  if (!grid) return;
-
-  VIDEO_TESTIMONIALS.forEach(function (v) {
-    var d = document.createElement('div');
-    d.className = 'vtcard';
-    d.innerHTML =
-      '<div class="vt-thumb">' +
-        '<img src="' + v.thumb + '" alt="' + v.title + '" loading="lazy">' +
-        '<div class="vt-overlay">' +
-          '<div class="vt-play">' +
-            '<svg width="22" height="22" viewBox="0 0 24 24" fill="#003d2e"><path d="M8 5v14l11-7z"/></svg>' +
-          '</div>' +
-        '</div>' +
-        '<span class="vt-duration">' + v.duration + '</span>' +
-      '</div>' +
-      '<div class="vt-info">' +
-        '<span class="vt-tag">' + v.tag + '</span>' +
-        '<h3>' + v.title + '</h3>' +
-        '<div class="vt-meta">' +
-          '<img src="' + v.avatar + '" class="vt-avatar" alt="' + v.name + '" loading="lazy">' +
-          '<div>' +
-            '<span class="vt-name">' + v.name + '</span>' +
-            '<div class="vt-result">&#10003; ' + v.result + '</div>' +
-          '</div>' +
-        '</div>' +
-      '</div>';
-    (function (ytId) {
-      d.addEventListener('click', function () { openVideoModal(ytId); });
-    }(v.ytId));
-    grid.appendChild(d);
-  });
-}
-
-function initFullReviews() {
-  var grid = document.getElementById('testi-reviews-grid');
-  if (!grid) return;
-
-  FULL_REVIEWS.forEach(function (r) {
-    var d = document.createElement('div');
-    d.className = 'tr-card';
-    d.innerHTML =
-      '<div class="tr-quote">\u201C</div>' +
-      '<div class="tr-stars">\u2605\u2605\u2605\u2605\u2605</div>' +
-      '<p class="tr-text">' + r.text + '</p>' +
-      '<div class="tr-author">' +
-        '<img src="' + r.img + '" class="tr-avatar" alt="' + r.name + '" loading="lazy">' +
-        '<div>' +
-          '<div class="tr-name">' + r.name + '</div>' +
-          '<div class="tr-loc">' + r.loc + '</div>' +
-          '<span class="tr-badge">' + r.badge + '</span>' +
-        '</div>' +
-      '</div>';
-    grid.appendChild(d);
-  });
+  if (!dots.length) return;
+  setInterval(function () {
+    dots[dotIdx].classList.remove('on');
+    dotIdx = (dotIdx + 1) % dots.length;
+    dots[dotIdx].classList.add('on');
+  }, 4000);
 }
 
 /* ── VIDEO MODAL ── */
 function openVideoModal(ytId) {
   var backdrop = document.getElementById('vmodal-backdrop');
-  var frame = document.getElementById('vmodal-frame');
+  var frame    = document.getElementById('vmodal-frame');
   if (!backdrop || !frame) return;
   frame.src = 'https://www.youtube.com/embed/' + ytId + '?autoplay=1&rel=0&modestbranding=1';
   backdrop.classList.add('open');
@@ -473,19 +405,21 @@ function openVideoModal(ytId) {
 
 function closeVideoModal() {
   var backdrop = document.getElementById('vmodal-backdrop');
-  var frame = document.getElementById('vmodal-frame');
+  var frame    = document.getElementById('vmodal-frame');
   if (!backdrop || !frame) return;
   frame.src = '';
   backdrop.classList.remove('open');
 }
 
 function initVideoModal() {
-  var closeBtn = document.getElementById('vmodal-close');
-  var backdrop = document.getElementById('vmodal-backdrop');
-  if (closeBtn) closeBtn.addEventListener('click', closeVideoModal);
-  if (backdrop) backdrop.addEventListener('click', function (e) { if (e.target === backdrop) closeVideoModal(); });
-  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeVideoModal(); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeVideoModal();
+  });
 }
+
+/* Stubs — content now baked in HTML, no JS rendering needed */
+function initVideoTestimonials() {}
+function initFullReviews() {}
 
 /* ============================================================
    11. BOOKING FORM
