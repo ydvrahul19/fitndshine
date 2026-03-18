@@ -1088,3 +1088,296 @@
   max-width: 900px;
   margin: 0 auto;
 }
+
+/* ── REAL VIDEO CARDS (MP4) ── */
+.vtcard-real {
+  background: var(--card);
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1.5px solid #ccebd8;
+  transition: .35s;
+}
+
+.vtcard-real:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 40px rgba(0,61,46,.14);
+  border-color: #95d4a8;
+}
+
+.vt-real-thumb {
+  width: 100%;
+  background: #000;
+  border-radius: 0;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.vt-real-thumb video {
+  width: 100%;
+  max-height: 280px;
+  object-fit: cover;
+  display: block;
+  background: #000;
+}
+
+.video-testi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+/* ══════════════════════════════════════════
+   BEFORE & AFTER RESULTS SECTION
+   ══════════════════════════════════════════ */
+.results-section {
+  background: #fff;
+  padding: 64px 0;
+  border-top: 2px solid var(--y);
+  border-bottom: 2px solid var(--y);
+}
+
+.results-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 28px;
+}
+
+/* PAIRED (before/after side-by-side) card */
+.result-card {
+  background: var(--bg);
+  border-radius: 20px;
+  padding: 18px;
+  border: 1.5px solid #ccebd8;
+  transition: .3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.result-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 40px rgba(0,61,46,.14);
+  border-color: var(--y);
+}
+
+.result-badge {
+  display: inline-block;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 14px;
+  border-radius: 20px;
+  margin-bottom: 14px;
+  letter-spacing: .3px;
+}
+
+.result-imgs-pair {
+  display: flex;
+  gap: 10px;
+  align-items: stretch;
+  margin-bottom: 14px;
+}
+
+.result-img-wrap {
+  flex: 1;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #e8f4ed;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.result-img-wrap img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+  transition: .4s;
+}
+
+.result-card:hover .result-img-wrap img {
+  transform: scale(1.04);
+}
+
+.result-img-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,30,18,.65);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+  padding: 5px 0;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+}
+
+.result-arrow {
+  display: flex;
+  align-items: center;
+  font-size: 22px;
+  color: var(--y);
+  font-weight: 800;
+  flex-shrink: 0;
+  padding: 0 2px;
+  text-shadow: 0 0 0 2px var(--g);
+  -webkit-text-stroke: 1px var(--g);
+}
+
+/* SINGLE image card */
+.result-card-single .result-img-single {
+  border-radius: 12px;
+  overflow: hidden;
+  background: #e8f4ed;
+  margin-bottom: 14px;
+}
+
+.result-card-single .result-img-single img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+  transition: .4s;
+}
+
+.result-card:hover .result-img-single img {
+  transform: scale(1.03);
+}
+
+.result-title {
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--t1);
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.result-disclaimer {
+  font-size: 11px;
+  color: var(--t3);
+  text-align: center;
+  font-style: italic;
+}
+
+.results-disclaimer-main {
+  margin-top: 36px;
+  font-size: 13px;
+  color: var(--t3);
+  text-align: center;
+  background: #f0f8f3;
+  border-radius: 10px;
+  padding: 14px 20px;
+  border: 1px solid #ccebd8;
+  line-height: 1.6;
+}
+
+/* ══ PHOTO SIZE FIXES throughout the site ══ */
+
+/* Founder cards — taller, portrait-friendly */
+.fcard img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+/* About page section image */
+.about-page-img img {
+  width: 100%;
+  height: 100%;
+  min-height: 340px;
+  object-fit: cover;
+  object-position: top center;
+}
+
+/* About section (home) hero image */
+.about-img {
+  width: 100%;
+  height: 520px !important;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: 22px;
+  box-shadow: var(--shadow-lg);
+}
+
+/* Service card images — consistent height */
+.svc-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.sdcard-img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Gallery photos — slightly bigger */
+.gphoto {
+  width: 300px !important;
+  height: 220px !important;
+}
+
+.gphoto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Testimonials reviewer avatars */
+.tr-avatar {
+  width: 52px !important;
+  height: 52px !important;
+  object-fit: cover;
+  object-position: top;
+}
+
+/* Video cards */
+.vt-real-thumb video {
+  width: 100%;
+  max-height: 320px;
+  object-fit: contain;
+  background: #000;
+  display: block;
+}
+
+/* Book page avatars */
+.book-avatar {
+  width: 56px !important;
+  height: 56px !important;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 50%;
+}
+
+/* Nav logo */
+.logo-icon {
+  overflow: hidden;
+  padding: 2px;
+}
+
+.logo-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+

@@ -203,3 +203,27 @@
   #p-home { display: block !important; }
   body { background: #fff; color: #000; }
 }
+
+/* ── RESULTS SECTION RESPONSIVE ── */
+@media (max-width: 768px) {
+  .results-grid {
+    grid-template-columns: 1fr;
+  }
+  .result-imgs-pair {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .result-arrow {
+    text-align: center;
+    transform: rotate(90deg);
+  }
+  .result-img-wrap img {
+    height: 200px;
+  }
+  .result-card-single .result-img-single img {
+    height: 240px;
+  }
+  .fcard img {
+    height: 300px;
+  }
+}
