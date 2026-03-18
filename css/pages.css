@@ -1712,3 +1712,34 @@
 .results-grid {
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
+
+/* ══ HOME REVIEWS FIX ══ */
+.testi-section {
+  overflow: visible !important;
+}
+.testi-inner {
+  overflow: visible !important;
+}
+.testi-slider {
+  overflow: hidden !important;
+}
+.testi-card {
+  min-width: 320px !important;
+  width: 320px !important;
+  flex-shrink: 0 !important;
+}
+.testi-text {
+  font-size: 14px;
+  color: var(--t2);
+  line-height: 1.72;
+  font-style: italic;
+  flex: 1;
+  margin-bottom: 14px;
+  overflow: visible;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Logo CSS managed in layout.css */

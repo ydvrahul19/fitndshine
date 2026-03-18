@@ -401,16 +401,20 @@
 .testi-slider {
   overflow: hidden;
   margin-top: 8px;
+  padding: 8px 4px 16px;
 }
 
 .testi-track {
   display: flex;
   gap: 22px;
   transition: transform .5s cubic-bezier(.4, 0, .2, 1);
+  align-items: stretch;
 }
 
 .testi-card {
-  min-width: calc(33.33% - 15px);
+  min-width: 320px;
+  max-width: 400px;
+  width: calc(33.33% - 16px);
   background: #fff;
   border-radius: 20px;
   padding: 28px;
@@ -419,6 +423,7 @@
   display: flex;
   flex-direction: column;
   transition: .3s;
+  box-shadow: 0 2px 12px rgba(0,61,46,.07);
 }
 
 .testi-card:hover {
